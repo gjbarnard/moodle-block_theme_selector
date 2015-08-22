@@ -46,3 +46,4 @@ Version Information
 ===================
 Version 2.9.0.1
   1. First alpha version for Moodle 2.9.
+  2. Add ability to switch on URL setting.

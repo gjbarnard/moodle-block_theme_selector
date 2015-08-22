@@ -1,3 +1,4 @@
+<?php
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -25,30 +26,17 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-/* jshint ignore:start */
-define(['jquery', 'core/log'], function($, log) {
+defined('MOODLE_INTERNAL') || die;
 
-  "use strict"; // jshint ;_;
-
-  log.debug('Block Theme Selector jQuery AMD');
-
-  return {
-    init: function(data) {
-      log.debug('Block Theme Selector AMD init initialised');
-      log.debug(data);
-
-      $(document).ready(function() {
-        $('.block_theme_selector select').on('change', function(e) {
-            var $select = $(e.target);
-            var params = {
-                'sesskey': $select.data('sesskey'),
-                'device': $select.data('device'),
-                'choose': $select.find(':selected').val()
-            };
-            window.location = '/theme/index.php?' + $.param(params);
-        });
-      });
-    }
-  }
-});
-/* jshint ignore:end */
+if ($ADMIN->fulltree) {
+    /* URL Switching - 1 = no, 2 = yes. */
+    $name = 'block_theme_selector_urlswitch';
+    $title = get_string('urlswitch', 'block_theme_selector');
+    $description = get_string('urlswitch_desc', 'block_theme_selector');
+    $default = 2;
+    $choices = array(
+        1 => new lang_string('no'),   // No.
+        2 => new lang_string('yes')   // Yes.
+    );
+    $settings->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
+}

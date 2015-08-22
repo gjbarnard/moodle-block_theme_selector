@@ -33,6 +33,10 @@ class block_theme_selector extends block_base {
         $this->title = get_string('pluginname', 'block_theme_selector');
     }
 
+    function has_config() {
+        return true;
+    }
+
     public function hide_header() {
         return true;
     }
@@ -42,12 +46,12 @@ class block_theme_selector extends block_base {
             return $this->content;
         }
 
-        global $COURSE;
+        global $COURSE, $CFG;
         $coursecontext = context_course::instance($COURSE->id);
         $this->content = new stdClass();
         $this->content->text = '';
-        //$this->page->requires->js('/blocks/theme_selector/theme-selector.js');
-        $this->page->requires->js_call_amd('block_theme_selector/block_theme_selector', 'init', array());
+        $this->page->requires->js_call_amd('block_theme_selector/block_theme_selector', 'init',
+            array(array('urlswitch' => $CFG->block_theme_selector_urlswitch, 'url' => $this->page->url->out(true))));
 
         if (has_capability('moodle/site:config', $coursecontext)) {
             // Add a dropdown to switch themes.

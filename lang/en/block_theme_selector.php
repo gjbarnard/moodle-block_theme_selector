@@ -29,3 +29,9 @@
 $string['pluginname'] = 'Theme selector';
 $string['changetheme'] = 'Change theme';
 $string['resetthemecache'] = 'Reset theme cache';
+$string['theme_selector:addinstance'] = 'Add a new Theme Selector block';
+$string['theme_selector:myaddinstance'] = 'Add a new Theme Selector block to Dashboard';
+
+// Settings.
+$string['urlswitch'] = 'URL switching';
+$string['urlswitch_desc'] = 'Switch using the URL, requires \'allowthemechangeonurl\' to be set.';
