@@ -1,4 +1,3 @@
-<?php
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -26,10 +25,29 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
+/* jshint ignore:start */
+define(['jquery', 'core/log'], function($, log) {
 
-$plugin->release = '2.9.0.1';
-$plugin->version   = 2015082100;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2015051100.00; // 2.9 (Build: 20150511).
-$plugin->maturity = MATURITY_BETA;
-$plugin->component = 'block_theme_selector';      // Full name of the plugin (used for diagnostics)
+  "use strict"; // jshint ;_;
+
+  log.debug('Block Theme Selector jQuery AMD');
+
+  return {
+    init: function(data) {
+      log.debug('Block Theme Selector AMD init initialised');
+
+      $(document).ready(function() {
+        $('.block_theme_selector select').on('change', function(e) {
+            var $select = $(e.target);
+            var params = {
+                'sesskey': $select.data('sesskey'),
+                'device': $select.data('device'),
+                'choose': $select.find(':selected').val()
+            };
+            window.location = '/theme/index.php?' + $.param(params);
+        });
+      });
+    }
+  }
+});
+/* jshint ignore:end */

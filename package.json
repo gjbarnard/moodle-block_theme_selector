@@ -1,0 +1,23 @@
+{
+  "name": "block-theme-selector",
+  "version": "0.1.0",
+  "description": "Grunt tasks for Moodle theme selector block.",
+  "main": "Gruntfile.js",
+  "author": {
+    "name": "Gareth J Barnard",
+    "url": "http://about.me/gjbarnard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gjb2048/moodle-block_theme_selector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gjb2048/moodle-block_theme_selector/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-exec": "~0.4.6",
+    "grunt-contrib-jshint": "~0.11.0",
+    "grunt-contrib-uglify": "~0.7.0"
+  }
+}

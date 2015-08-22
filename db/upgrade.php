@@ -26,10 +26,17 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
+/**
+ * Upgrade code for the theme selector block.
+ *
+ * @param int $oldversion
+ * @param object $block
+ */
+function xmldb_block_theme_selector_upgrade($oldversion) {
+    global $CFG, $DB;
 
-$plugin->release = '2.9.0.1';
-$plugin->version   = 2015082100;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2015051100.00; // 2.9 (Build: 20150511).
-$plugin->maturity = MATURITY_BETA;
-$plugin->component = 'block_theme_selector';      // Full name of the plugin (used for diagnostics)
+    // Moodle v2.9.0 release upgrade line.
+    // Put any upgrade step following this.
+
+    return true;
+}

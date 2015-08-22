@@ -26,10 +26,30 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
+defined('MOODLE_INTERNAL') || die();
 
-$plugin->release = '2.9.0.1';
-$plugin->version   = 2015082100;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2015051100.00; // 2.9 (Build: 20150511).
-$plugin->maturity = MATURITY_BETA;
-$plugin->component = 'block_theme_selector';      // Full name of the plugin (used for diagnostics)
+$capabilities = array(
+
+    'block/theme_selector:myaddinstance' => array(
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_SYSTEM,
+        'archetypes' => array(
+            'user' => CAP_ALLOW
+        ),
+
+        'clonepermissionsfrom' => 'moodle/my:manageblocks'
+    ),
+
+    'block/theme_selector:addinstance' => array(
+        'riskbitmask' => RISK_SPAM | RISK_XSS,
+
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_BLOCK,
+        'archetypes' => array(
+            'editingteacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW
+        ),
+
+        'clonepermissionsfrom' => 'moodle/site:manageblocks'
+    ),
+);
