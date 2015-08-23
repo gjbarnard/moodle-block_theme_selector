@@ -34,4 +34,6 @@ $string['theme_selector:myaddinstance'] = 'Add a new Theme Selector block to Das
 
 // Settings.
 $string['urlswitch'] = 'URL switching';
-$string['urlswitch_desc'] = 'Switch using the URL, requires \'allowthemechangeonurl\' to be set.';
+$string['urlswitch_desc'] = 'Switch using the URL, requires the core theme \'allowthemechangeonurl\' setting to be set.';
+$string['urlswitchwarning'] = 'URL switching setting not configured, check block installation.';
+$string['urlswitchurlwarning'] = 'The core theme \'allowthemechangeonurl\' setting needs to be set.';

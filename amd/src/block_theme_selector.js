@@ -35,17 +35,30 @@ define(['jquery', 'core/log'], function($, log) {
   return {
     init: function(data) {
       log.debug('Block Theme Selector AMD init initialised');
-      log.debug(data);
 
       $(document).ready(function() {
         $('.block_theme_selector select').on('change', function(e) {
             var $select = $(e.target);
-            var params = {
-                'sesskey': $select.data('sesskey'),
-                'device': $select.data('device'),
-                'choose': $select.find(':selected').val()
-            };
-            window.location = '/theme/index.php?' + $.param(params);
+            var choose = $select.find(':selected').val();
+            var urlswitch = $select.data('urlswitch');
+            if (urlswitch == 2) {
+                var changeparam;
+                var urlparams = $select.data('urlparams');
+                if (urlparams == 1) {
+                    changeparam = '?';
+                } else {
+                    changeparam = '&';
+                }
+                changeparam += 'theme=' + choose;
+                window.location = $select.data('url') + changeparam;
+            } else {
+                var params = {
+                    'sesskey': $select.data('sesskey'),
+                    'device': $select.data('device'),
+                    'choose': choose
+                };
+                window.location = '/theme/index.php?' + $.param(params);
+            }
         });
       });
     }
