@@ -34,7 +34,7 @@ class block_theme_selector extends block_base {
         $this->title = get_string('pluginname', 'block_theme_selector');
     }
 
-    function has_config() {
+    public function has_config() {
         return true;
     }
 
@@ -57,7 +57,8 @@ class block_theme_selector extends block_base {
             if (((has_capability('moodle/site:config', $coursecontext)) && ($CFG->block_theme_selector_urlswitch == 1)) ||
                 (($CFG->block_theme_selector_urlswitch == 2) && ($allowthemechangeonurl))) {
 
-                $selectdataarray = array('data-sesskey' => sesskey(), 'data-device' => 'default', 'data-urlswitch' => $CFG->block_theme_selector_urlswitch);
+                $selectdataarray = array('data-sesskey' => sesskey(), 'data-device' => 'default',
+                    'data-urlswitch' => $CFG->block_theme_selector_urlswitch);
                 if ($CFG->block_theme_selector_urlswitch == 2) {
                     $pageurl = $this->page->url->out(false);
                     $selectdataarray['data-url'] = $pageurl;
@@ -68,7 +69,7 @@ class block_theme_selector extends block_base {
                 // Add a dropdown to switch themes.
                 $themes = core_component::get_plugin_list('theme');
                 $options = array();
-                foreach($themes as $theme => $themedir) {
+                foreach ($themes as $theme => $themedir) {
                     $options[$theme] = ucfirst($theme);
                 }
                 if ($CFG->block_theme_selector_urlswitch == 1) {
@@ -83,13 +84,18 @@ class block_theme_selector extends block_base {
 
                 $this->content->text .= '<br /><br />';
 
-                $this->content->text .= html_writer::start_tag('form', array('action' => new moodle_url('/theme/index.php'), 'method' => 'post'));
+                $this->content->text .= html_writer::start_tag('form', array('action' => new moodle_url('/theme/index.php'),
+                    'method' => 'post'));
                 if (has_capability('moodle/site:config', $coursecontext)) {
                     // Add a button to reset theme caches.
-                    $this->content->text .= html_writer::empty_tag('input', array('type' => 'hidden', 'name' => 'sesskey', 'value' => sesskey()));
-                    $this->content->text .= html_writer::empty_tag('input', array('type' => 'hidden', 'name' => 'reset', 'value' => '1'));
-                    $this->content->text .= html_writer::empty_tag('input', array('type' => 'hidden', 'name' => 'device', 'value' => 'default'));
-                    $this->content->text .= html_writer::tag('button', get_string('resetthemecache', 'block_theme_selector'), array('type' => 'submit'));
+                    $this->content->text .= html_writer::empty_tag('input', array('type' => 'hidden', 'name' => 'sesskey',
+                        'value' => sesskey()));
+                    $this->content->text .= html_writer::empty_tag('input', array('type' => 'hidden', 'name' => 'reset',
+                        'value' => '1'));
+                    $this->content->text .= html_writer::empty_tag('input', array('type' => 'hidden', 'name' => 'device',
+                        'value' => 'default'));
+                    $this->content->text .= html_writer::tag('button', get_string('resetthemecache', 'block_theme_selector'),
+                        array('type' => 'submit'));
                 }
                 $this->content->text .= html_writer::end_tag('form');
 

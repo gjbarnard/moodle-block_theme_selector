@@ -48,6 +48,7 @@ Installation
    When URL Switching is on everybody can change the theme but it will only be for them.  The set site theme will
    remain as set by a user with 'moodle/site:config' capability.
 4. Add the "Theme selector" block wherever you like.
+5. The selector will show the current theme as the one selected.
 
 Version Information
 ===================

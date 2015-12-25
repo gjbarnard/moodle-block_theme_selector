@@ -3,6 +3,7 @@ Version Information
 Version 2.9.0.2
   1. Test on Moodle 3.0.
   2. Tidy up instructional interface.
+  3. Tidy up for Travis CI.
 
 Version 2.9.0.1
   1. First beta version for Moodle 2.9.

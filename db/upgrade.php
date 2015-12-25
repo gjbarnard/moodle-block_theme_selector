@@ -33,7 +33,6 @@
  * @param object $block
  */
 function xmldb_block_theme_selector_upgrade($oldversion) {
-    global $CFG, $DB;
 
     // Moodle v2.9.0 release upgrade line.
     // Put any upgrade step following this.
