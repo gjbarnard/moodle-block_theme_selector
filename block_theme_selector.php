@@ -52,17 +52,19 @@ class block_theme_selector extends block_base {
         $this->content = new stdClass();
         $this->content->text = '';
         if (!empty($CFG->block_theme_selector_urlswitch)) {
-            $selectdataarray = array('data-sesskey' => sesskey(), 'data-device' => 'default', 'data-urlswitch' => $CFG->block_theme_selector_urlswitch);
-            if ($CFG->block_theme_selector_urlswitch == 2) {
-                $pageurl = $this->page->url->out(false);
-                $selectdataarray['data-url'] = $pageurl;
-                $selectdataarray['data-urlparams'] = (strpos($pageurl, '?') === false) ? 1 : 2;
-                $allowthemechangeonurl = get_config('core', 'allowthemechangeonurl');
-            }
-            $this->page->requires->js_call_amd('block_theme_selector/block_theme_selector', 'init', array());
 
+            $allowthemechangeonurl = get_config('core', 'allowthemechangeonurl');
             if (((has_capability('moodle/site:config', $coursecontext)) && ($CFG->block_theme_selector_urlswitch == 1)) ||
                 (($CFG->block_theme_selector_urlswitch == 2) && ($allowthemechangeonurl))) {
+
+                $selectdataarray = array('data-sesskey' => sesskey(), 'data-device' => 'default', 'data-urlswitch' => $CFG->block_theme_selector_urlswitch);
+                if ($CFG->block_theme_selector_urlswitch == 2) {
+                    $pageurl = $this->page->url->out(false);
+                    $selectdataarray['data-url'] = $pageurl;
+                    $selectdataarray['data-urlparams'] = (strpos($pageurl, '?') === false) ? 1 : 2;
+                }
+                $this->page->requires->js_call_amd('block_theme_selector/block_theme_selector', 'init', array());
+
                 // Add a dropdown to switch themes.
                 $themes = core_component::get_plugin_list('theme');
                 $options = array();
@@ -92,6 +94,8 @@ class block_theme_selector extends block_base {
                 $this->content->text .= html_writer::end_tag('form');
 
                 $this->content->text .= '<br />';
+            } else if ($CFG->block_theme_selector_urlswitch == 1) {
+                $this->content->text .= html_writer::tag('p', get_string('siteconfigwarning', 'block_theme_selector'));
             } else if (($CFG->block_theme_selector_urlswitch == 2) && (!$allowthemechangeonurl)) {
                 $this->content->text .= html_writer::tag('p', get_string('urlswitchurlwarning', 'block_theme_selector'));
             }

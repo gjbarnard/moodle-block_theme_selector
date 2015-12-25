@@ -37,3 +37,4 @@ $string['urlswitch'] = 'URL switching';
 $string['urlswitch_desc'] = 'Switch using the URL, requires the core theme \'allowthemechangeonurl\' setting to be set.';
 $string['urlswitchwarning'] = 'URL switching setting not configured, check block installation.';
 $string['urlswitchurlwarning'] = 'The core theme \'allowthemechangeonurl\' setting needs to be set.';
+$string['siteconfigwarning'] = 'Only users with the \'moodle/site:config\' capability can change themes.  Or ask a user who has the capability to enable \'URL Switching\' for the block.';
