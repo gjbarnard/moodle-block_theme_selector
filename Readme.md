@@ -51,7 +51,7 @@ Installation
 
 Version Information
 ===================
-See CHANGES.md
+See Changes.md
 
 Me
 ==
