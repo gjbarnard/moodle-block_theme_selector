@@ -28,8 +28,8 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->release = '2.9.0.2';
-$plugin->version   = 2015082101;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->release = '2.9.1';
+$plugin->version   = 2015082102;        // The current plugin version (Date: YYYYMMDDXX)
 $plugin->requires  = 2015051100.00; // 2.9 (Build: 20150511).
-$plugin->maturity = MATURITY_BETA;
+$plugin->maturity = MATURITY_STABLE;
 $plugin->component = 'block_theme_selector';      // Full name of the plugin (used for diagnostics)

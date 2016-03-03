@@ -1,5 +1,8 @@
 Version Information
 ===================
+Version 2.9.1
+  1. First stable version.  Works on M3.0 too.
+
 Version 2.9.0.2
   1. Test on Moodle 3.0.
   2. Tidy up instructional interface.
