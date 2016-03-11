@@ -65,6 +65,7 @@ class block_theme_selector extends block_base {
                     $selectdataarray['data-urlparams'] = (strpos($pageurl, '?') === false) ? 1 : 2;
                 }
                 $selectdataarray['aria-labelledby'] = 'themeselectorselectlabel';
+                $selectdataarray['id'] = 'themeselectorselect';
                 $this->page->requires->js_call_amd('block_theme_selector/block_theme_selector', 'init', array());
 
                 // Add a dropdown to switch themes.
@@ -82,7 +83,7 @@ class block_theme_selector extends block_base {
                 }
                 $this->content->text .= html_writer::start_tag('form', array('class' => 'themeselectorselect'));
                 $this->content->text .= html_writer::tag('label', get_string('changetheme', 'block_theme_selector'),
-                    array('id' => 'themeselectorselectlabel'));
+                    array('id' => 'themeselectorselectlabel', 'for' => 'themeselectorselect'));
                 $this->content->text .= html_writer::select($options, 'choose', $current, false, $selectdataarray);
                 $this->content->text .= html_writer::end_tag('form');
 
