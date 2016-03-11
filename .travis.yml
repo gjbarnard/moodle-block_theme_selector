@@ -16,12 +16,12 @@ php:
 matrix:
  allow_failures:
   - php: 7.0
+ fast_finish: true
 
 env:
  global:
   - MOODLE_BRANCH=MOODLE_30_STABLE
-  - IGNORE_PATHS=amd/build,amd/src/bootstrap.js,amd/src/fitvids.js,javascript/syntaxhighlighter_3_0_83/
-  # Ignore custom.css until CSSlint can be instructed to ignore lines for '[[setting:customcss]]'.
+  - IGNORE_PATHS=amd/build
   - IGNORE_NAMES=*.txt
  matrix:
   - DB=pgsql

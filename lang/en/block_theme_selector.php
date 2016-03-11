@@ -27,7 +27,7 @@
  */
 
 $string['pluginname'] = 'Theme selector';
-$string['changetheme'] = 'Change theme';
+$string['changetheme'] = 'Change theme:';
 $string['resetthemecache'] = 'Reset theme cache';
 $string['theme_selector:addinstance'] = 'Add a new Theme Selector block';
 $string['theme_selector:myaddinstance'] = 'Add a new Theme Selector block to Dashboard';

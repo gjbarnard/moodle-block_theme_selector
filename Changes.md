@@ -1,5 +1,9 @@
 Version Information
 ===================
+Version 2.9.1.1
+  1. Improvements for ARIA.
+  2. Style improvements.
+
 Version 2.9.1
   1. First stable version.  Works on M3.0 too.
 
