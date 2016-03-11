@@ -80,17 +80,16 @@ class block_theme_selector extends block_base {
                     unset($options['bootstrapbase']);
                     $current = $this->page->theme->name;
                 }
-                $this->content->text .= html_writer::start_tag('div', array('class' => 'themeselectorselect'));
+                $this->content->text .= html_writer::start_tag('form', array('class' => 'themeselectorselect'));
                 $this->content->text .= html_writer::tag('label', get_string('changetheme', 'block_theme_selector'),
                     array('id' => 'themeselectorselectlabel'));
                 $this->content->text .= html_writer::select($options, 'choose', $current, false, $selectdataarray);
-                $this->content->text .= html_writer::end_tag('div');
+                $this->content->text .= html_writer::end_tag('form');
 
                 if (has_capability('moodle/site:config', $coursecontext)) {
                     // Add a button to reset theme caches.
-                    $this->content->text .= html_writer::start_tag('div', array('class' => 'themeselectorreset'));
                     $this->content->text .= html_writer::start_tag('form', array('action' => new moodle_url('/theme/index.php'),
-                    'method' => 'post'));
+                    'method' => 'post', 'class' => 'themeselectorreset'));
                     $this->content->text .= html_writer::empty_tag('input', array('type' => 'hidden', 'name' => 'sesskey',
                         'value' => sesskey()));
                     $this->content->text .= html_writer::empty_tag('input', array('type' => 'hidden', 'name' => 'reset',
@@ -100,7 +99,6 @@ class block_theme_selector extends block_base {
                     $this->content->text .= html_writer::tag('button', get_string('resetthemecache', 'block_theme_selector'),
                         array('type' => 'submit'));
                     $this->content->text .= html_writer::end_tag('form');
-                    $this->content->text .= html_writer::end_tag('div');
                 }
 
                 $this->content->text .= '<br />';
