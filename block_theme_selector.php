@@ -72,7 +72,7 @@ class block_theme_selector extends block_base {
                 $themes = core_component::get_plugin_list('theme');
                 $options = array();
                 foreach ($themes as $theme => $themedir) {
-                    $options[$theme] = ucfirst($theme);
+                    $options[$theme] = ucfirst(get_string('pluginname', 'theme_'.$theme));
                 }
                 if ($CFG->block_theme_selector_urlswitch == 1) {
                     $current = core_useragent::get_device_type_theme('default');

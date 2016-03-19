@@ -1,5 +1,8 @@
 Version Information
 ===================
+Version 2.9.1.2
+  1. Use the 'pluginname' string of the theme in the selection box, but still capitalise first letter.
+
 Version 2.9.1.1
   1. Improvements for ARIA.
   2. Style improvements.
