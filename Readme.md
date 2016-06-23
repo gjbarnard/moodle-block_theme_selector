@@ -15,12 +15,19 @@ About
 
 Required version of Moodle
 ==========================
-This version works with Moodle version 2015051100.00 release 2.9 (Build: 20150511) and above within the 2.9 branch until the
-next release and Moodle version 2015111600.00 3.0 (Build: 20151116) and above within the 3.0 branch until the
-next release.
+This version works with:
 
-Please ensure that your hardware and software complies with 'Requirements' in 'Installing Moodle' on
-'docs.moodle.org/29/en/Installing_Moodle' / 'docs.moodle.org/30/en/Installing_Moodle'.
+Moodle version 2015051100.00 2.9 (Build: 20150511) and above within the 2.9 branch.
+Moodle version 2015111600.00 3.0 (Build: 20151116) and above within the 3.0 branch.
+Moodle version 2016052300.00 3.1 (Build: 20160523) and above within the 3.1 branch.
+
+until the next release.
+
+Please ensure that your hardware and software complies with 'Requirements' in 'Installing Moodle' on:
+'docs.moodle.org/29/en/Installing_Moodle'
+'docs.moodle.org/30/en/Installing_Moodle'
+'docs.moodle.org/31/en/Installing_Moodle'
+respectively.
 
 Free Software
 =============
