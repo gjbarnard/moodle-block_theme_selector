@@ -22,13 +22,13 @@
  * @copyright  &copy; 2015-onwards G J Barnard in respect to modifications of original code:
  *             https://github.com/johntron/moodle-theme-selector-block by John Tron, see:
  *             https://github.com/johntron/moodle-theme-selector-block/issues/1.
- * @author     G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
+ * @author     G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->release = '2.9.1.2';
+$plugin->release = '2.9.1.3';
 $plugin->version   = 2015082104;
 $plugin->requires  = 2015051100.00; // 2.9 (Build: 20150511).
 $plugin->maturity = MATURITY_STABLE;

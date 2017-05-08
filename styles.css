@@ -1,5 +1,16 @@
-.block_theme_selector label#themeselectorselectlabel { display: inline; vertical-align: middle; }
-.dir-ltr .block_theme_selector label#themeselectorselectlabel { margin-right: 4px; }
-.dir-rtl .block_theme_selector label#themeselectorselectlabel { margin-left: 4px; }
-.block_theme_selector .themeselectorselect select { margin-bottom: 0; }
-.block_theme_selector .themeselectorreset button { margin: 10px 0 0; }
+.block_theme_selector label#themeselectorselectlabel {
+    display: inline; 
+    vertical-align: middle;
+}
+.dir-ltr .block_theme_selector label#themeselectorselectlabel {
+    margin-right: 4px;
+}
+.dir-rtl .block_theme_selector label#themeselectorselectlabel {
+    margin-left: 4px;
+}
+.block_theme_selector .themeselectorselect select {
+    margin-bottom: 0;
+}
+.block_theme_selector .themeselectorreset button {
+    margin: 10px 0 0;
+}

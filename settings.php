@@ -22,7 +22,7 @@
  * @copyright  &copy; 2015-onwards G J Barnard in respect to modifications of original code:
  *             https://github.com/johntron/moodle-theme-selector-block by John Tron, see:
  *             https://github.com/johntron/moodle-theme-selector-block/issues/1.
- * @author     G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
+ * @author     G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
