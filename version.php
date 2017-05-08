@@ -29,7 +29,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 $plugin->release = '2.9.1.3';
-$plugin->version   = 2015082104;
+$plugin->version   = 2015082105;
 $plugin->requires  = 2015051100.00; // 2.9 (Build: 20150511).
 $plugin->maturity = MATURITY_STABLE;
 $plugin->component = 'block_theme_selector';
