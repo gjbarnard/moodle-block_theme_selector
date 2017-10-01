@@ -24,6 +24,10 @@
     vertical-align: super;
 }
 
+.block_theme_selector #themeselectorcreatewindow {
+    display: block;
+}
+
 .dir-ltr .block_theme_selector #themeselectorcreatewindow {
     margin-left: 0;
 }
