@@ -100,22 +100,18 @@ class block_theme_selector extends block_base {
                         array('type' => 'submit'));
                     $this->content->text .= html_writer::end_tag('form');
                 }
-
-                $this->content->text .= '<br />';
-
                 if ($CFG->block_theme_selector_window == 2) {
                     $this->content->text .= html_writer::start_tag('form', array('class' => 'themeselectorwindow'));
                     $this->content->text .= html_writer::tag('label', get_string('windowsize', 'block_theme_selector'),
                         array('id' => 'themeselectorwindowlabel', 'for' => 'themeselectorwindowwidth'));
                     $this->content->text .= html_writer::empty_tag('input', array('type' => 'number',
-                        'name' => 'themeselectorwindowwidth', 'size' => '4', 'min' => '1', 'max' => '3000'));
+                        'name' => 'themeselectorwindowwidth', 'min' => '1', 'max' => '9999'));
                     $this->content->text .= html_writer::tag('span', get_string('by', 'block_theme_selector'));
                     $this->content->text .= html_writer::empty_tag('input', array('type' => 'number',
-                        'name' => 'themeselectorwindowheight', 'size' => '4', 'min' => '1', 'max' => '2000'));
+                        'name' => 'themeselectorwindowheight', 'min' => '1', 'max' => '9999'));
                     $this->content->text .= html_writer::tag('button', get_string('createwindow', 'block_theme_selector'),
                         array('id' => 'themeselectorcreatewindow'));
                     $this->content->text .= html_writer::end_tag('form');
-                    $this->content->text .= '<br />';
                 }
             } else if ($CFG->block_theme_selector_urlswitch == 1) {
                 $this->content->text .= html_writer::tag('p', get_string('siteconfigwarning', 'block_theme_selector'));

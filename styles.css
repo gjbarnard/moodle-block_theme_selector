@@ -15,8 +15,12 @@
     margin: 10px 0 0;
 }
 
-.block_theme_selector .themeselectorwindow input[type='input'] {
-    width: 50px;
+.block_theme_selector .themeselectorwindow {
+    padding-top: 10px;
+}
+
+.block_theme_selector .themeselectorwindow input[type='number'] {
+    width: 60px;
 }
 
 .block_theme_selector .themeselectorwindow span {
