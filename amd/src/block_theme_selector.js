@@ -69,7 +69,7 @@ define(['jquery', 'core/log'], function ($, log) {
                         var width = $('input[name="themeselectorwindowwidth"]').val();
                         var height = $('input[name="themeselectorwindowheight"]').val();
                         var mywindow = window.open(window.location.href, "",
-                            "toolbar=yes, width=" + width + ", height=" + height);
+                            "scrollbars=yes, toolbar=yes, width=" + width + ", height=" + height);
                         mywindow.focus();
                     });
                 }
