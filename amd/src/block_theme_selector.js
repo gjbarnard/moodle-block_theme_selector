@@ -64,10 +64,12 @@ define(['jquery', 'core/log'], function ($, log) {
                 if ($('.themeselectorwindow').length) {
                     $('input[name="themeselectorwindowwidth"]').val(window.innerWidth);
                     $('input[name="themeselectorwindowheight"]').val(window.innerHeight);
-                    $('#themeselectorcreatewindow').click(function () {
+                    $('#themeselectorcreatewindow').click(function (e) {
+                        e.preventDefault();
                         var width = $('input[name="themeselectorwindowwidth"]').val();
                         var height = $('input[name="themeselectorwindowheight"]').val();
-                        window.open(window.location.href, "", "width=" + width + ", height=" + height);
+                        var mywindow = window.open(window.location.href, "", "width=" + width + ", height=" + height);
+                        mywindow.focus();
                     });
                 }
             });
