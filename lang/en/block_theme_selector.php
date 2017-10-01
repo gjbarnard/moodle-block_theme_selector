@@ -27,14 +27,19 @@
  */
 
 $string['pluginname'] = 'Theme selector';
+$string['by'] = 'by';
 $string['changetheme'] = 'Change theme:';
+$string['createwindow'] = 'Create window';
 $string['resetthemecache'] = 'Reset theme cache';
 $string['theme_selector:addinstance'] = 'Add a new Theme Selector block';
 $string['theme_selector:myaddinstance'] = 'Add a new Theme Selector block to Dashboard';
+$string['windowsize'] = 'Window size:';
 
 // Settings.
+$string['siteconfigwarning'] = 'Only users with the \'moodle/site:config\' capability can change themes.  Or ask a user who has the capability to enable \'URL Switching\' for the block.';
 $string['urlswitch'] = 'URL switching';
 $string['urlswitch_desc'] = 'Switch using the URL, requires the core theme \'allowthemechangeonurl\' setting to be set.';
 $string['urlswitchwarning'] = 'URL switching setting not configured, check block installation.';
 $string['urlswitchurlwarning'] = 'The core theme \'allowthemechangeonurl\' setting needs to be set.';
-$string['siteconfigwarning'] = 'Only users with the \'moodle/site:config\' capability can change themes.  Or ask a user who has the capability to enable \'URL Switching\' for the block.';
+$string['windowinformation'] = 'Window information';
+$string['windowinformation_desc'] = 'Display information about the current inner window size and allow creation of a new window of the given dimensions.';

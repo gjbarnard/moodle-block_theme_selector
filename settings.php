@@ -39,4 +39,15 @@ if ($ADMIN->fulltree) {
         2 => new lang_string('yes')   // Yes.
     );
     $settings->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
+
+    /* Inner window information - 1 = no, 2 = yes. */
+    $name = 'block_theme_selector_window';
+    $title = get_string('windowinformation', 'block_theme_selector');
+    $description = get_string('windowinformation_desc', 'block_theme_selector');
+    $default = 1;
+    $choices = array(
+        1 => new lang_string('no'),   // No.
+        2 => new lang_string('yes')   // Yes.
+    );
+    $settings->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
 }

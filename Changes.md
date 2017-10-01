@@ -1,5 +1,8 @@
 Version Information
 ===================
+Version 2.9.1.4
+  1. Add inner window information and window creation.  Useful for making multiple consistently sized screen shots.
+
 Version 2.9.1.3
   1. Update TravisCI for M3.3.
   2. Test on M3.3.

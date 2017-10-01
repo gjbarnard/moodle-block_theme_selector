@@ -26,18 +26,18 @@
  */
 
 /* jshint ignore:start */
-define(['jquery', 'core/log'], function($, log) {
+define(['jquery', 'core/log'], function ($, log) {
 
     "use strict"; // jshint ;_;
 
     log.debug('Block Theme Selector jQuery AMD');
 
     return {
-        init: function() {
+        init: function () {
             log.debug('Block Theme Selector AMD init initialised');
 
-            $(document).ready(function() {
-                $('.block_theme_selector select').on('change', function(e) {
+            $(document).ready(function () {
+                $('.block_theme_selector select').on('change', function (e) {
                     var $select = $(e.target);
                     var choose = $select.find(':selected').val();
                     var urlswitch = $select.data('urlswitch');
@@ -60,6 +60,16 @@ define(['jquery', 'core/log'], function($, log) {
                         window.location = '/theme/index.php?' + $.param(params);
                     }
                 });
+
+                if ($('.themeselectorwindow').length) {
+                    $('input[name="themeselectorwindowwidth"]').val(window.innerWidth);
+                    $('input[name="themeselectorwindowheight"]').val(window.innerHeight);
+                    $('#themeselectorcreatewindow').click(function () {
+                        var width = $('input[name="themeselectorwindowwidth"]').val();
+                        var height = $('input[name="themeselectorwindowheight"]').val();
+                        window.open(window.location.href, "", "width=" + width + ", height=" + height);
+                    });
+                }
             });
         }
     };

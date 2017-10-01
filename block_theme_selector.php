@@ -25,7 +25,6 @@
  * @author     G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 defined('MOODLE_INTERNAL') || die;
 
 class block_theme_selector extends block_base {
@@ -55,7 +54,7 @@ class block_theme_selector extends block_base {
 
             $allowthemechangeonurl = get_config('core', 'allowthemechangeonurl');
             if (((has_capability('moodle/site:config', $coursecontext)) && ($CFG->block_theme_selector_urlswitch == 1)) ||
-                (($CFG->block_theme_selector_urlswitch == 2) && ($allowthemechangeonurl))) {
+                    (($CFG->block_theme_selector_urlswitch == 2) && ($allowthemechangeonurl))) {
 
                 $selectdataarray = array('data-sesskey' => sesskey(), 'data-device' => 'default',
                     'data-urlswitch' => $CFG->block_theme_selector_urlswitch);
@@ -72,7 +71,7 @@ class block_theme_selector extends block_base {
                 $themes = core_component::get_plugin_list('theme');
                 $options = array();
                 foreach ($themes as $theme => $themedir) {
-                    $options[$theme] = ucfirst(get_string('pluginname', 'theme_'.$theme));
+                    $options[$theme] = ucfirst(get_string('pluginname', 'theme_' . $theme));
                 }
                 if ($CFG->block_theme_selector_urlswitch == 1) {
                     $current = core_useragent::get_device_type_theme('default');
@@ -90,7 +89,7 @@ class block_theme_selector extends block_base {
                 if (has_capability('moodle/site:config', $coursecontext)) {
                     // Add a button to reset theme caches.
                     $this->content->text .= html_writer::start_tag('form', array('action' => new moodle_url('/theme/index.php'),
-                    'method' => 'post', 'class' => 'themeselectorreset'));
+                        'method' => 'post', 'class' => 'themeselectorreset'));
                     $this->content->text .= html_writer::empty_tag('input', array('type' => 'hidden', 'name' => 'sesskey',
                         'value' => sesskey()));
                     $this->content->text .= html_writer::empty_tag('input', array('type' => 'hidden', 'name' => 'reset',
@@ -103,6 +102,21 @@ class block_theme_selector extends block_base {
                 }
 
                 $this->content->text .= '<br />';
+
+                if ($CFG->block_theme_selector_window == 2) {
+                    $this->content->text .= html_writer::start_tag('form', array('class' => 'themeselectorwindow'));
+                    $this->content->text .= html_writer::tag('label', get_string('windowsize', 'block_theme_selector'),
+                        array('id' => 'themeselectorwindowlabel', 'for' => 'themeselectorwindowwidth'));
+                    $this->content->text .= html_writer::empty_tag('input', array('type' => 'number',
+                        'name' => 'themeselectorwindowwidth', 'size' => '4', 'min' => '1', 'max' => '3000'));
+                    $this->content->text .= html_writer::tag('span', get_string('by', 'block_theme_selector'));
+                    $this->content->text .= html_writer::empty_tag('input', array('type' => 'number',
+                        'name' => 'themeselectorwindowheight', 'size' => '4', 'min' => '1', 'max' => '2000'));
+                    $this->content->text .= html_writer::tag('button', get_string('createwindow', 'block_theme_selector'),
+                        array('id' => 'themeselectorcreatewindow'));
+                    $this->content->text .= html_writer::end_tag('form');
+                    $this->content->text .= '<br />';
+                }
             } else if ($CFG->block_theme_selector_urlswitch == 1) {
                 $this->content->text .= html_writer::tag('p', get_string('siteconfigwarning', 'block_theme_selector'));
             } else if (($CFG->block_theme_selector_urlswitch == 2) && (!$allowthemechangeonurl)) {
