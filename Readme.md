@@ -21,8 +21,8 @@ Moodle version 2015051100.00 2.9 (Build: 20150511) and above within the 2.9 bran
 Moodle version 2015111600.00 3.0 (Build: 20151116) and above within the 3.0 branch.
 Moodle version 2016052300.00 3.1 (Build: 20160523) and above within the 3.1 branch.
 Moodle version 2016110800.00 3.2 (Build: 20161108) and above within the 3.2 branch.
-Moodle version 2017050500.00 3.3rc1 (Build: 20170505) and above within the 3.3 branch.
-
+Moodle version 2017051500.00 3.3 (Build: 20170515) and above within the 3.3 branch.
+Moodle version 2017051500.00 3.4beta+ (Build: 20171027) and above within the 3.4 branch.
 until the next release.
 
 Please ensure that your hardware and software complies with 'Requirements' in 'Installing Moodle' on:
@@ -31,6 +31,7 @@ Please ensure that your hardware and software complies with 'Requirements' in 'I
 'docs.moodle.org/31/en/Installing_Moodle'
 'docs.moodle.org/32/en/Installing_Moodle'
 'docs.moodle.org/33/en/Installing_Moodle'
+'docs.moodle.org/34/en/Installing_Moodle'
 respectively.
 
 Free Software
