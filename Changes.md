@@ -1,6 +1,7 @@
 Version Information
 ===================
 Version 2.9.1.5
+  1. Aria fixes.
 
 Version 2.9.1.4
   1. Add inner window information and window creation.  Useful for making multiple consistently sized screen shots.

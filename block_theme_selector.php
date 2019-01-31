@@ -105,10 +105,14 @@ class block_theme_selector extends block_base {
                     $this->content->text .= html_writer::tag('label', get_string('windowsize', 'block_theme_selector'),
                         array('id' => 'themeselectorwindowlabel', 'for' => 'themeselectorwindowwidth'));
                     $this->content->text .= html_writer::empty_tag('input', array('type' => 'number',
-                        'name' => 'themeselectorwindowwidth', 'min' => '1', 'max' => '9999'));
+                        'id' => 'themeselectorwindowwidth', 'name' => 'themeselectorwindowwidth',
+                        'aria-labelledby' => 'themeselectorwindowlabel',
+                        'min' => '1', 'max' => '9999'));
                     $this->content->text .= html_writer::tag('span', get_string('by', 'block_theme_selector'));
                     $this->content->text .= html_writer::empty_tag('input', array('type' => 'number',
-                        'name' => 'themeselectorwindowheight', 'min' => '1', 'max' => '9999'));
+                        'id' => 'themeselectorwindowheight', 'name' => 'themeselectorwindowheight',
+                        'aria-labelledby' => 'themeselectorwindowlabel',
+                        'min' => '1', 'max' => '9999'));
                     $this->content->text .= html_writer::tag('button', get_string('createwindow', 'block_theme_selector'),
                         array('id' => 'themeselectorcreatewindow'));
                     $this->content->text .= html_writer::end_tag('form');
