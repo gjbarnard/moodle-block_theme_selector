@@ -58,7 +58,7 @@ if ($ADMIN->fulltree) {
     }
     $settings->add(new admin_setting_configmultiselect('block_theme_selector_excludedthemes',
             get_string('excludedthemes', 'block_theme_selector'), get_string('excludedthemes_desc', 'block_theme_selector'),
-            array_keys($options), $options));
+            '', $options));
 
     foreach ($themes as $theme => $themedir) {
         $settings->add(new admin_setting_configtext("block_theme_selector_aliasedtheme_$theme",
