@@ -37,6 +37,10 @@ $string['windowsize'] = 'Window size:';
 
 // Settings.
 $string['siteconfigwarning'] = 'Only users with the \'moodle/site:config\' capability can change themes.  Or ask a user who has the capability to enable \'URL Switching\' for the block.';
+$string['aliasedtheme'] = 'Alias to use for theme {$a}';
+$string['aliasedtheme_desc'] = 'If text is entered here it will be used instead of the theme\'s name in the selector instead';
+$string['excludedthemes'] = 'Excluded themes';
+$string['excludedthemes_desc'] = 'Excluded themes will not be available to select.';
 $string['urlswitch'] = 'URL switching';
 $string['urlswitch_desc'] = 'Switch using the URL, requires the core theme \'allowthemechangeonurl\' setting to be set.';
 $string['urlswitchwarning'] = 'URL switching setting not configured, check block installation.';
