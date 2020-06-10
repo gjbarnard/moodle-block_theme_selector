@@ -50,4 +50,19 @@ if ($ADMIN->fulltree) {
         2 => new lang_string('yes')   // Yes.
     );
     $settings->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
+
+    $themes = core_component::get_plugin_list('theme');
+    $options = array();
+    foreach ($themes as $theme => $themedir) {
+        $options[$theme] = ucfirst(get_string('pluginname', 'theme_' . $theme));
+    }
+    $settings->add(new admin_setting_configmultiselect('block_theme_selector_excludedthemes',
+            get_string('excludedthemes', 'block_theme_selector'), get_string('excludedthemes_desc', 'block_theme_selector'),
+            '', $options));
+
+    foreach ($themes as $theme => $themedir) {
+        $settings->add(new admin_setting_configtext("block_theme_selector_aliasedtheme_$theme",
+                get_string('aliasedtheme', 'block_theme_selector', $theme), get_string('aliasedtheme_desc', 'block_theme_selector'), '',
+                PARAM_TEXT));
+    }
 }

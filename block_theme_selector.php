@@ -68,10 +68,22 @@ class block_theme_selector extends block_base {
                 $this->page->requires->js_call_amd('block_theme_selector/block_theme_selector', 'init', array());
 
                 // Add a dropdown to switch themes.
+                if (!empty($CFG->block_theme_selector_excludedthemes)) {
+                    $excludedthemes = explode(',', $CFG->block_theme_selector_excludedthemes);
+                } else {
+                    $excludedthemes = [];
+                }
                 $themes = core_component::get_plugin_list('theme');
                 $options = array();
                 foreach ($themes as $theme => $themedir) {
-                    $options[$theme] = ucfirst(get_string('pluginname', 'theme_' . $theme));
+                    if (in_array($theme, $excludedthemes)) {
+                        continue;
+                    }
+                    if (!empty($CFG->{"block_theme_selector_aliasedtheme_$theme"})) {
+                        $options[$theme] = $CFG->{"block_theme_selector_aliasedtheme_$theme"};
+                    } else {
+                        $options[$theme] = ucfirst(get_string('pluginname', 'theme_' . $theme));
+                    }
                 }
                 if ($CFG->block_theme_selector_urlswitch == 1) {
                     $current = core_useragent::get_device_type_theme('default');
