@@ -1,5 +1,8 @@
 Version Information
 ===================
+Version 2.9.1.6
+  1. Functionality to disable and alias themes - thanks to Andrew Hancox - https://github.com/andrewhancox.
+
 Version 2.9.1.5
   1. Aria fixes.
 
