@@ -17,8 +17,7 @@
 /**
  * Theme selector block.
  *
- * @package    block
- * @subpackage theme_selector
+ * @package    block_theme_selector
  * @copyright  &copy; 2015-onwards G J Barnard in respect to modifications of original code:
  *             https://github.com/johntron/moodle-theme-selector-block by John Tron, see:
  *             https://github.com/johntron/moodle-theme-selector-block/issues/1.

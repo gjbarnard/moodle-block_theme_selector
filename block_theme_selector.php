@@ -17,8 +17,7 @@
 /**
  * Theme selector block.
  *
- * @package    block
- * @subpackage theme_selector
+ * @package    block_theme_selector
  * @copyright  &copy; 2015-onwards G J Barnard in respect to modifications of original code:
  *             https://github.com/johntron/moodle-theme-selector-block by John Tron, see:
  *             https://github.com/johntron/moodle-theme-selector-block/issues/1.
@@ -27,20 +26,41 @@
  */
 defined('MOODLE_INTERNAL') || die;
 
+/**
+ * Theme selector block class.
+ */
 class block_theme_selector extends block_base {
 
+    /**
+     * Initialise the block.
+     */
     public function init() {
         $this->title = get_string('pluginname', 'block_theme_selector');
     }
 
+    /**
+     * States if the block has a configuration.
+     *
+     * @return boolean success.
+     */
     public function has_config() {
         return true;
     }
 
+    /**
+     * States if the block can hide the header.
+     *
+     * @return boolean success.
+     */
     public function hide_header() {
         return false;
     }
 
+    /**
+     * Gets the content of the block.
+     *
+     * @return string Markup.
+     */
     public function get_content() {
         if ($this->content !== null) {
             return $this->content;
