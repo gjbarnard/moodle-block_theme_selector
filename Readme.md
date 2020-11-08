@@ -17,13 +17,18 @@ Required version of Moodle
 ==========================
 This version works with:
 
-Moodle version 2015051100.00 2.9 (Build: 20150511) and above within the 2.9 branch.
-Moodle version 2015111600.00 3.0 (Build: 20151116) and above within the 3.0 branch.
-Moodle version 2016052300.00 3.1 (Build: 20160523) and above within the 3.1 branch.
-Moodle version 2016110800.00 3.2 (Build: 20161108) and above within the 3.2 branch.
-Moodle version 2017051500.00 3.3 (Build: 20170515) and above within the 3.3 branch.
-Moodle version 2017051500.00 3.4beta+ (Build: 20171027) and above within the 3.4 branch.
-until the next release.
+ - Moodle 2.9 version 2015051100.00 (Build: 20150511) and above within the 2.9 branch.
+ - Moodle 3.0 version 2015111600.00 (Build: 20151116) and above within the 3.0 branch.
+ - Moodle 3.1 version 2016052300.00 (Build: 20160523) and above within the 3.1 branch.
+ - Moodle 3.3 version 2016110800.00 (Build: 20161108) and above within the 3.2 branch.
+ - Moodle 3.3 version 2017051500.00 (Build: 20170515) and above within the 3.3 branch.
+ - Moodle 3.4beta+ version 2017102700.00 (Build: 20171027) and above within the 3.4 branch.
+ - Moodle 3.5 version 2018051700.00 (Build: 20180517) and above within the 3.5 branch.
+ - Moodle 3.6.1 version 2018120301.00 (Build: 20181205) and above within the 3.6 branch.
+ - Moodle 3.7 version 2019052000.00 (Build: 20190520) and above within the 3.7 branch.
+ - Moodle 3.8 version 2019111800.00 (Build: 20191118) and above within the 3.8 branch.
+ - Moodle 3.9 version 2020061500.00 (Build: 20200615) and above within the 3.9 branch.
+ - Moodle 3.10 version 2020110900.00 (Build: 20201109) and above within the 3.10 branch.
 
 Please ensure that your hardware and software complies with 'Requirements' in 'Installing Moodle' on:
 'docs.moodle.org/29/en/Installing_Moodle'
@@ -32,6 +37,12 @@ Please ensure that your hardware and software complies with 'Requirements' in 'I
 'docs.moodle.org/32/en/Installing_Moodle'
 'docs.moodle.org/33/en/Installing_Moodle'
 'docs.moodle.org/34/en/Installing_Moodle'
+'docs.moodle.org/35/en/Installing_Moodle'
+'docs.moodle.org/36/en/Installing_Moodle'
+'docs.moodle.org/37/en/Installing_Moodle'
+'docs.moodle.org/38/en/Installing_Moodle'
+'docs.moodle.org/39/en/Installing_Moodle'
+'docs.moodle.org/310/en/Installing_Moodle'
 respectively.
 
 Free Software
