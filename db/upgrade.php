@@ -30,7 +30,8 @@ defined('MOODLE_INTERNAL') || die;
 /**
  * Upgrade code for the theme selector block.
  *
- * @param int $oldversion.
+ * @param int $oldversion Old version no if any.
+ *
  * @return boolean success.
  */
 function xmldb_block_theme_selector_upgrade($oldversion = 0) {
