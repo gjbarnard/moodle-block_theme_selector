@@ -37,9 +37,7 @@ defined('MOODLE_INTERNAL') || die;
 function xmldb_block_theme_selector_upgrade($oldversion = 0) {
 
     // Automatic 'Purge all caches'....
-    if ($oldversion < 2117050800) {
-        purge_all_caches();
-    }
+    purge_all_caches();
 
     return true;
 }
