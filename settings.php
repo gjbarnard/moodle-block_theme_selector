@@ -33,10 +33,10 @@ if ($ADMIN->fulltree) {
     $title = get_string('urlswitch', 'block_theme_selector');
     $description = get_string('urlswitch_desc', 'block_theme_selector');
     $default = 2;
-    $choices = array(
+    $choices = [
         1 => new lang_string('no'),   // No.
-        2 => new lang_string('yes')   // Yes.
-    );
+        2 => new lang_string('yes'),   // Yes.
+    ];
     $settings->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
 
     /* Inner window information - 1 = no, 2 = yes. */
@@ -44,14 +44,14 @@ if ($ADMIN->fulltree) {
     $title = get_string('windowinformation', 'block_theme_selector');
     $description = get_string('windowinformation_desc', 'block_theme_selector');
     $default = 1;
-    $choices = array(
+    $choices = [
         1 => new lang_string('no'),   // No.
-        2 => new lang_string('yes')   // Yes.
-    );
+        2 => new lang_string('yes'),   // Yes.
+    ];
     $settings->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
 
     $themes = core_component::get_plugin_list('theme');
-    $options = array();
+    $options = [];
     foreach ($themes as $theme => $themedir) {
         $options[$theme] = ucfirst(get_string('pluginname', 'theme_' . $theme));
     }
