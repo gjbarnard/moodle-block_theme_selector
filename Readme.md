@@ -45,7 +45,7 @@ Please ensure that your hardware and software complies with 'Requirements' in 'I
  - [Moodle 3.5](https://docs.moodle.org/35/en/Installing_Moodle)
  - [Moodle 3.6](https://docs.moodle.org/36/en/Installing_Moodle)
  - [Moodle 3.7](https://docs.moodle.org/37/en/Installing_Moodle)
- - [Moodle 3.9](https://docs.moodle.org/38/en/Installing_Moodle)
+ - [Moodle 3.8](https://docs.moodle.org/38/en/Installing_Moodle)
  - [Moodle 3.9](https://docs.moodle.org/39/en/Installing_Moodle)
  - [Moodle 3.10](https://docs.moodle.org/310/en/Installing_Moodle)
  - [Moodle 3.11](https://docs.moodle.org/311/en/Installing_Moodle)
