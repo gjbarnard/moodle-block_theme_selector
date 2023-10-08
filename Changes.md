@@ -1,5 +1,8 @@
 Version Information
 ===================
+Version 29.1.6
+  1. Tested on Moodle 4.3
+
 Version 2.9.1.5
   1. Aria fixes.
   2. Functionality to disable and alias themes - thanks to Andrew Hancox - https://github.com/andrewhancox.
