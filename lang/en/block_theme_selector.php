@@ -25,6 +25,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+// phpcs:disable moodle.Files.LangFilesOrdering
+
 $string['pluginname'] = 'Theme selector';
 $string['by'] = 'by';
 $string['changetheme'] = 'Change theme:';
