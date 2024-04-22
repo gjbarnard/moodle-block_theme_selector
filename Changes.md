@@ -1,5 +1,8 @@
 Version Information
 ===================
+Version 29.1.7
+  1. Tested on Moodle 4.4
+
 Version 29.1.6
   1. Tested on Moodle 4.3
 
