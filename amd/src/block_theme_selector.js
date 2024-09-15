@@ -16,65 +16,72 @@
 /**
  * Theme selector block.
  *
- * @package    block
- * @subpackage theme_selector
+ * @module     block_theme_selector
  * @copyright  &copy; 2015-onwards G J Barnard in respect to modifications of original code:
  *             https://github.com/johntron/moodle-theme-selector-block by John Tron, see:
  *             https://github.com/johntron/moodle-theme-selector-block/issues/1.
  * @author     G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-/* jshint ignore:start */
-define(['jquery', 'core/log'], function ($, log) {
+import $ from 'jquery';
+import log from 'core/log';
 
-    "use strict"; // jshint ;_;
-
-    log.debug('Block Theme Selector jQuery AMD');
-
-    return {
-        init: function () {
-            log.debug('Block Theme Selector AMD init initialised');
-
-            $(document).ready(function () {
-                $('.block_theme_selector select').on('change', function (e) {
-                    var $select = $(e.target);
-                    var choose = $select.find(':selected').val();
-                    var urlswitch = $select.data('urlswitch');
-                    if (urlswitch == 2) {
-                        var changeparam;
-                        var urlparams = $select.data('urlparams');
-                        if (urlparams == 1) {
-                            changeparam = '?';
-                        } else {
-                            changeparam = '&';
-                        }
-                        changeparam += 'theme=' + choose;
-                        window.location = $select.data('url') + changeparam;
-                    } else {
-                        var params = {
-                            'sesskey': $select.data('sesskey'),
-                            'device': $select.data('device'),
-                            'choose': choose
-                        };
-                        window.location = '/theme/index.php?' + $.param(params);
-                    }
-                });
-
-                if ($('.themeselectorwindow').length) {
-                    $('input[name="themeselectorwindowwidth"]').val(window.innerWidth);
-                    $('input[name="themeselectorwindowheight"]').val(window.innerHeight);
-                    $('#themeselectorcreatewindow').click(function (e) {
-                        e.preventDefault();
-                        var width = $('input[name="themeselectorwindowwidth"]').val();
-                        var height = $('input[name="themeselectorwindowheight"]').val();
-                        var mywindow = window.open(window.location.href, "",
-                            "scrollbars=yes, toolbar=yes, width=" + width + ", height=" + height);
-                        mywindow.focus();
-                    });
-                }
-            });
+/**
+ * Selector.
+ */
+const selector = () => {
+    $('.block_theme_selector select').on('change', function (e) {
+        var $select = $(e.target);
+        var choose = $select.find(':selected').val();
+        var urlswitch = $select.data('urlswitch');
+        if (urlswitch == 2) {
+            var changeparam;
+            var urlparams = $select.data('urlparams');
+            if (urlparams == 1) {
+                changeparam = '?';
+            } else {
+                changeparam = '&';
+            }
+            changeparam += 'theme=' + choose;
+            window.location = $select.data('url') + changeparam;
+        } else {
+            var params = {
+                'sesskey': $select.data('sesskey'),
+                'device': $select.data('device'),
+                'choose': choose
+            };
+            window.location = '/theme/index.php?' + $.param(params);
         }
-    };
-});
-/* jshint ignore:end */
+    });
+
+    if ($('.themeselectorwindow').length) {
+        $('input[name="themeselectorwindowwidth"]').val(window.innerWidth);
+        $('input[name="themeselectorwindowheight"]').val(window.innerHeight);
+        $('#themeselectorcreatewindow').click(function (e) {
+            e.preventDefault();
+            var width = $('input[name="themeselectorwindowwidth"]').val();
+            var height = $('input[name="themeselectorwindowheight"]').val();
+            var mywindow = window.open(window.location.href, "",
+                "scrollbars=yes, toolbar=yes, width=" + width + ", height=" + height);
+            mywindow.focus();
+        });
+    }
+};
+
+/**
+ * Init.
+ */
+export const init = () => {
+    log.debug('Block Theme Selector ES6 Selector init');
+    if (document.readyState !== 'loading') {
+        log.debug("Block Theme Selector ES6 Selector init DOM content already loaded");
+        selector();
+    } else {
+        log.debug("Block Theme Selector ES6 Selector init JS DOM content not loaded");
+        document.addEventListener('DOMContentLoaded', function () {
+            log.debug("Block Theme Selector ES6 Selector init JS DOM content loaded");
+            selector();
+        });
+    }
+};
