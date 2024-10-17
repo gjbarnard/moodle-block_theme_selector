@@ -1,5 +1,8 @@
 Version Information
 ===================
+Version 405.1.0
+  1. Moodle 4.5 version.
+
 Version 29.1.8
   1. Update to ES6 module.
 

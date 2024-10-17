@@ -25,6 +25,9 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+use core\output\html_writer;
+use core\url;
+
 /**
  * Theme selector block class.
  */
@@ -73,7 +76,7 @@ class block_theme_selector extends block_base {
 
             $allowthemechangeonurl = get_config('core', 'allowthemechangeonurl');
             if (((has_capability('moodle/site:config', $coursecontext)) && ($CFG->block_theme_selector_urlswitch == 1)) ||
-                    (($CFG->block_theme_selector_urlswitch == 2) && ($allowthemechangeonurl))) {
+                (($CFG->block_theme_selector_urlswitch == 2) && ($allowthemechangeonurl))) {
 
                 $selectdataarray = ['data-sesskey' => sesskey(), 'data-device' => 'default',
                     'data-urlswitch' => $CFG->block_theme_selector_urlswitch, ];
@@ -107,8 +110,6 @@ class block_theme_selector extends block_base {
                 if ($CFG->block_theme_selector_urlswitch == 1) {
                     $current = core_useragent::get_device_type_theme('default');
                 } else {
-                    unset($options['base']);
-                    unset($options['bootstrapbase']);
                     $current = $this->page->theme->name;
                 }
                 $this->content->text .= html_writer::start_tag('form', ['class' => 'themeselectorselect']);
@@ -119,7 +120,7 @@ class block_theme_selector extends block_base {
 
                 if (has_capability('moodle/site:config', $coursecontext)) {
                     // Add a button to reset theme caches.
-                    $this->content->text .= html_writer::start_tag('form', ['action' => new moodle_url('/theme/index.php'),
+                    $this->content->text .= html_writer::start_tag('form', ['action' => new url('/theme/index.php'),
                         'method' => 'post', 'class' => 'themeselectorreset', ]);
                     $this->content->text .= html_writer::empty_tag('input', ['type' => 'hidden', 'name' => 'sesskey',
                         'value' => sesskey(), ]);
