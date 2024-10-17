@@ -1,0 +1,82 @@
+{{!
+  This file is part of Moodle - http://moodle.org/
+
+  Moodle is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Moodle is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_theme_selector/theme_selector
+
+    Theme selector template.
+
+    Context variables required for this template:
+    * resetsesskey - Reset Session Key.
+    * reseturl - Reset URL.
+    * siteconfigwarning - Site config warning.
+    * themeselect - Theme select to show.
+    * themeselectorwindowsize - Show the theme selector window size.
+    * urlswitchset - Is the 'urlswitch' setting is set.
+    * urlswitchurlwarning - Site url warning.
+
+    Example context (json):
+    {
+        "resetsesskey": "",
+        "reseturl": "",
+        "siteconfigwarning": false,
+        "themeselect": "",
+        "themeselectorwindowsize": false,
+        "urlswitchset": false,
+        "urlswitchurlwarning": false
+    }
+}}
+
+{{#themeselect}}
+<form class="themeselectorselect">
+    <label id="themeselectorselectlabel" for="themeselectorselect">{{#str}}changetheme, block_theme_selector{{/str}}</label>
+    {{{themeselect}}}
+</form>
+{{#reseturl}}
+<form action="{{{reseturl}}}" method="post" class="themeselectorreset">
+    <input type="hidden" name="sesskey" value="{{resetsesskey}}">
+    <input type="hidden" name="reset" value="1">
+    <input type="hidden" name="device" value="default">
+    <button type="submit" class="btn btn-secondary">{{#str}}resetthemecache, block_theme_selector{{/str}}</button>
+</form>
+{{/reseturl}}
+{{#themeselectorwindowsize}}
+<form class="themeselectorwindow">
+    <label id="themeselectorwindowlabel" for="themeselectorwindowwidth">{{#str}}windowsize, block_theme_selector{{/str}}</label>
+    <input type="number" id="themeselectorwindowwidth" name="themeselectorwindowwidth" aria-labelledby="themeselectorwindowlabel" min="1" max="9999">
+    <span>{{#str}}by, block_theme_selector{{/str}}</span>
+    <input type="number" id="themeselectorwindowheight" name="themeselectorwindowheight" aria-labelledby="themeselectorwindowlabel" min="1" max="9999">
+    <button id="themeselectorcreatewindow" class="btn btn-secondary">{{#str}}createwindow, block_theme_selector{{/str}}</button>
+</form>
+{{/themeselectorwindowsize}}
+{{/themeselect}}
+{{#siteconfigwarning}}
+    <p>{{#str}}siteconfigwarning, block_theme_selector{{/str}}</p>
+{{/siteconfigwarning}}
+{{#urlswitchurlwarning}}
+    <p>{{#str}}urlswitchurlwarning, block_theme_selector{{/str}}</p>
+{{/urlswitchurlwarning}}
+{{^urlswitchset}}
+    <p>{{#str}}urlswitchwarning, block_theme_selector{{/str}}</p>
+{{/urlswitchset}}
+
+{{#themeselect}}
+{{#js}}
+require(['block_theme_selector/block_theme_selector'], function(TS) {
+    TS.init();
+});
+{{/js}}
+{{/themeselect}}

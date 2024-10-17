@@ -3,29 +3,29 @@
     vertical-align: middle;
 }
 .dir-ltr .block_theme_selector label#themeselectorselectlabel {
-    margin-right: 4px;
+    margin-right: .25rem;
 }
 .dir-rtl .block_theme_selector label#themeselectorselectlabel {
-    margin-left: 4px;
+    margin-left: .25rem;
 }
 .block_theme_selector .themeselectorselect select {
     margin-bottom: 0;
 }
 .block_theme_selector .themeselectorreset button {
-    margin: 10px 0 0;
+    margin: .5rem 0 0;
 }
 
 .block_theme_selector .themeselectorwindow {
-    padding-top: 10px;
+    padding-top: .5rem;
 }
 
 .block_theme_selector .themeselectorwindow input[type='number'] {
-    width: 60px;
+    width: 4rem;
 }
 
 .block_theme_selector .themeselectorwindow span {
-    padding: 0 10px;
-    vertical-align: super;
+    padding: 0 .25rem;
+    vertical-align: baseline;
 }
 
 .block_theme_selector #themeselectorcreatewindow {

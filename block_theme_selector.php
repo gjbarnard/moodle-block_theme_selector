@@ -68,15 +68,21 @@ class block_theme_selector extends block_base {
             return $this->content;
         }
 
-        global $COURSE, $CFG;
+        global $CFG, $COURSE, $OUTPUT;
         $coursecontext = context_course::instance($COURSE->id);
         $this->content = new stdClass();
         $this->content->text = '';
+
+        $templatecontext = new stdClass();
+
         if (!empty($CFG->block_theme_selector_urlswitch)) {
+            $templatecontext->urlswitchset = true;
 
             $allowthemechangeonurl = get_config('core', 'allowthemechangeonurl');
             if (((has_capability('moodle/site:config', $coursecontext)) && ($CFG->block_theme_selector_urlswitch == 1)) ||
                 (($CFG->block_theme_selector_urlswitch == 2) && ($allowthemechangeonurl))) {
+
+                $templatecontext->themeselect = true;
 
                 $selectdataarray = ['data-sesskey' => sesskey(), 'data-device' => 'default',
                     'data-urlswitch' => $CFG->block_theme_selector_urlswitch, ];
@@ -87,7 +93,6 @@ class block_theme_selector extends block_base {
                 }
                 $selectdataarray['aria-labelledby'] = 'themeselectorselectlabel';
                 $selectdataarray['id'] = 'themeselectorselect';
-                $this->page->requires->js_call_amd('block_theme_selector/block_theme_selector', 'init', []);
 
                 // Add a dropdown to switch themes.
                 if (!empty($CFG->block_theme_selector_excludedthemes)) {
@@ -112,51 +117,26 @@ class block_theme_selector extends block_base {
                 } else {
                     $current = $this->page->theme->name;
                 }
-                $this->content->text .= html_writer::start_tag('form', ['class' => 'themeselectorselect']);
-                $this->content->text .= html_writer::tag('label', get_string('changetheme', 'block_theme_selector'),
-                    ['id' => 'themeselectorselectlabel', 'for' => 'themeselectorselect']);
-                $this->content->text .= html_writer::select($options, 'choose', $current, false, $selectdataarray);
-                $this->content->text .= html_writer::end_tag('form');
 
+                $templatecontext->themeselect = html_writer::select($options, 'choose', $current, false, $selectdataarray);
                 if (has_capability('moodle/site:config', $coursecontext)) {
                     // Add a button to reset theme caches.
-                    $this->content->text .= html_writer::start_tag('form', ['action' => new url('/theme/index.php'),
-                        'method' => 'post', 'class' => 'themeselectorreset', ]);
-                    $this->content->text .= html_writer::empty_tag('input', ['type' => 'hidden', 'name' => 'sesskey',
-                        'value' => sesskey(), ]);
-                    $this->content->text .= html_writer::empty_tag('input', ['type' => 'hidden', 'name' => 'reset',
-                        'value' => '1', ]);
-                    $this->content->text .= html_writer::empty_tag('input', ['type' => 'hidden', 'name' => 'device',
-                        'value' => 'default', ]);
-                    $this->content->text .= html_writer::tag('button', get_string('resetthemecache', 'block_theme_selector'),
-                        ['type' => 'submit']);
-                    $this->content->text .= html_writer::end_tag('form');
+                    $templatecontext->reseturl = new url('/theme/index.php');
+                    $templatecontext->resetsesskey = sesskey();
                 }
                 if ($CFG->block_theme_selector_window == 2) {
-                    $this->content->text .= html_writer::start_tag('form', ['class' => 'themeselectorwindow']);
-                    $this->content->text .= html_writer::tag('label', get_string('windowsize', 'block_theme_selector'),
-                        ['id' => 'themeselectorwindowlabel', 'for' => 'themeselectorwindowwidth']);
-                    $this->content->text .= html_writer::empty_tag('input', ['type' => 'number',
-                        'id' => 'themeselectorwindowwidth', 'name' => 'themeselectorwindowwidth',
-                        'aria-labelledby' => 'themeselectorwindowlabel',
-                        'min' => '1', 'max' => '9999', ]);
-                    $this->content->text .= html_writer::tag('span', get_string('by', 'block_theme_selector'));
-                    $this->content->text .= html_writer::empty_tag('input', ['type' => 'number',
-                        'id' => 'themeselectorwindowheight', 'name' => 'themeselectorwindowheight',
-                        'aria-labelledby' => 'themeselectorwindowlabel',
-                        'min' => '1', 'max' => '9999', ]);
-                    $this->content->text .= html_writer::tag('button', get_string('createwindow', 'block_theme_selector'),
-                        ['id' => 'themeselectorcreatewindow']);
-                    $this->content->text .= html_writer::end_tag('form');
+                    $templatecontext->themeselectorwindowsize = true;
                 }
             } else if ($CFG->block_theme_selector_urlswitch == 1) {
-                $this->content->text .= html_writer::tag('p', get_string('siteconfigwarning', 'block_theme_selector'));
+                $templatecontext->siteconfigwarning = true;
             } else if (($CFG->block_theme_selector_urlswitch == 2) && (!$allowthemechangeonurl)) {
-                $this->content->text .= html_writer::tag('p', get_string('urlswitchurlwarning', 'block_theme_selector'));
+                $templatecontext->urlswitchurlwarning = true;
             }
         } else {
-            $this->content->text .= html_writer::tag('p', get_string('urlswitchwarning', 'block_theme_selector'));
+            $templatecontext->urlswitchset = false;
         }
+
+        $this->content->text = $OUTPUT->render_from_template('block_theme_selector/theme_selector', $templatecontext);
 
         return $this->content;
     }
