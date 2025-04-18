@@ -1,6 +1,10 @@
 Version Information
 ===================
 
+Version 405.1.1
+---------------
+1. Tested on Moodle 5.0.
+
 Version 405.1.0
 ---------------
 1. Moodle 4.5 version.

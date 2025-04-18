@@ -27,9 +27,9 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->release = '405.1.0';
-$plugin->version = 2024101700;
+$plugin->release = '405.1.1';
+$plugin->version = 2024101701;
 $plugin->requires = 2024100700.00; // 4.5 (Build: 20241007).
-$plugin->supported = [405, 405]; // Supported Moodle version.
+$plugin->supported = [405, 500]; // Supported Moodle version.
 $plugin->maturity = MATURITY_STABLE;
 $plugin->component = 'block_theme_selector';
