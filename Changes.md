@@ -1,6 +1,11 @@
 Version Information
 ===================
 
+Version 405.1.2
+---------------
+1. Tested on Moodle 5.1.
+2. Fix odd define warning for JS when 'cachejs' is off.
+
 Version 405.1.1
 ---------------
 1. Tested on Moodle 5.0.
