@@ -34,8 +34,8 @@ if ($ADMIN->fulltree) {
     $description = get_string('urlswitch_desc', 'block_theme_selector');
     $default = 2;
     $choices = [
-        1 => new lang_string('no'),   // No.
-        2 => new lang_string('yes'),   // Yes.
+        1 => new lang_string('no'), // No.
+        2 => new lang_string('yes'), // Yes.
     ];
     $settings->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
 
@@ -45,8 +45,8 @@ if ($ADMIN->fulltree) {
     $description = get_string('windowinformation_desc', 'block_theme_selector');
     $default = 1;
     $choices = [
-        1 => new lang_string('no'),   // No.
-        2 => new lang_string('yes'),   // Yes.
+        1 => new lang_string('no'), // No.
+        2 => new lang_string('yes'), // Yes.
     ];
     $settings->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
 
@@ -55,13 +55,21 @@ if ($ADMIN->fulltree) {
     foreach ($themes as $theme => $themedir) {
         $options[$theme] = ucfirst(get_string('pluginname', 'theme_' . $theme));
     }
-    $settings->add(new admin_setting_configmultiselect('block_theme_selector_excludedthemes',
-            get_string('excludedthemes', 'block_theme_selector'), get_string('excludedthemes_desc', 'block_theme_selector'),
-            [], $options));
+    $settings->add(new admin_setting_configmultiselect(
+        'block_theme_selector_excludedthemes',
+        get_string('excludedthemes', 'block_theme_selector'),
+        get_string('excludedthemes_desc', 'block_theme_selector'),
+        [],
+        $options
+    ));
 
     foreach ($themes as $theme => $themedir) {
-        $settings->add(new admin_setting_configtext("block_theme_selector_aliasedtheme_$theme",
-                get_string('aliasedtheme', 'block_theme_selector', $theme),
-                get_string('aliasedtheme_desc', 'block_theme_selector'), '', PARAM_TEXT));
+        $settings->add(new admin_setting_configtext(
+            "block_theme_selector_aliasedtheme_$theme",
+            get_string('aliasedtheme', 'block_theme_selector', $theme),
+            get_string('aliasedtheme_desc', 'block_theme_selector'),
+            '',
+            PARAM_TEXT
+        ));
     }
 }

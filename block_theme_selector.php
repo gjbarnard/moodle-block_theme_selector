@@ -32,7 +32,6 @@ use core\url;
  * Theme selector block class.
  */
 class block_theme_selector extends block_base {
-
     /**
      * Initialise the block.
      */
@@ -79,9 +78,10 @@ class block_theme_selector extends block_base {
             $templatecontext->urlswitchset = true;
 
             $allowthemechangeonurl = get_config('core', 'allowthemechangeonurl');
-            if (((has_capability('moodle/site:config', $coursecontext)) && ($CFG->block_theme_selector_urlswitch == 1)) ||
-                (($CFG->block_theme_selector_urlswitch == 2) && ($allowthemechangeonurl))) {
-
+            if (
+                ((has_capability('moodle/site:config', $coursecontext)) && ($CFG->block_theme_selector_urlswitch == 1)) ||
+                (($CFG->block_theme_selector_urlswitch == 2) && ($allowthemechangeonurl))
+            ) {
                 $templatecontext->themeselect = true;
 
                 $selectdataarray = ['data-sesskey' => sesskey(), 'data-device' => 'default',
