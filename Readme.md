@@ -17,12 +17,14 @@ This version works with:
 
  - Moodle 4.5 version 2024100700.00 (Build: 20241007) and above within the 4.5 branch.
  - Moodle 5.0 version 2025041400.00 (Build: 20250414) and above within the 5.0 branch.
+ - Moodle 5.1 version 2025100600.00 (Build: 20251006) and above within the 5.1 branch.
 
 Installing Moodle links
 -----------------------
 Please ensure that your hardware and software complies with 'Requirements' in 'Installing Moodle' on:
  - [Moodle 4.5](https://docs.moodle.org/405/en/Installing_Moodle)
  - [Moodle 5.0](https://docs.moodle.org/500/en/Installing_Moodle)
+ - [Moodle 5.1](https://docs.moodle.org/501/en/Installing_Moodle)
 
 Free Software
 =============
