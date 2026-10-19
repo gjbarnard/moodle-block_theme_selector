@@ -1,6 +1,10 @@
 Version Information
 ===================
 
+Version 405.1.4
+---------------
+1. Tested on Moodle 5.3.
+
 Version 405.1.3
 ---------------
 1. Tested on Moodle 5.2.

@@ -27,9 +27,9 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->release = '405.1.3';
-$plugin->version = 2024101703;
+$plugin->release = '405.1.4';
+$plugin->version = 2024101704;
 $plugin->requires = 2024100700.00; // 4.5 (Build: 20241007).  phpcs:ignore Squiz.PHP.CommentedOutCode.Found
-$plugin->supported = [405, 502]; // Supported Moodle version.
+$plugin->supported = [405, 503]; // Supported Moodle version.
 $plugin->maturity = MATURITY_STABLE;
 $plugin->component = 'block_theme_selector';
