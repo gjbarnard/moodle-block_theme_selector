@@ -1,0 +1,11 @@
+name: block_theme_selector
+summary: A block to quickly change themes.  Great for theme developers!
+description: |
+  Change themes easily and more!
+labels:
+  - fully-free
+links:
+  docs: https://github.com/gjbarnard/moodle-block_theme_selector/blob/main/Readme.md
+  changelog: https://github.com/gjbarnard/moodle-block_theme_selector/blob/main/Changes.md
+  issues: https://github.com/gjbarnard/moodle-block_theme_selector/issues
+  donate: https://github.com/gjbarnard/moodle-block_theme_selector/blob/main/Information.md
